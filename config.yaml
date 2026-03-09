@@ -1,0 +1,34 @@
+# mouseman config
+# Map extra mouse buttons to macOS actions
+#
+# Available actions:
+#   mission_control  - open Mission Control / Exposé (all spaces)
+#   app_switch       - open Cmd+Tab app switcher
+#   window_switch    - cycle windows of current app (Cmd+`)
+#   expose_app       - show all windows of current app (App Exposé)
+#   shortcut         - simulate a keyboard shortcut (requires 'keys:')
+#
+# Button numbers: button4 = first extra button, button5 = second, etc.
+# Run with --verbose to see which button numbers your mouse sends.
+
+buttons:
+  button4:
+    action: app_switch
+
+  button5:
+    action: mission_control
+
+  button6:
+    action: window_switch
+
+  button7:
+    action: expose_app
+
+  # Custom shortcut examples (uncomment to use):
+  # button8:
+  #   action: shortcut
+  #   keys: ["cmd", "shift", "4"]   # screenshot selection
+
+  # button9:
+  #   action: shortcut
+  #   keys: ["cmd", "z"]            # undo

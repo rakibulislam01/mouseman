@@ -1,0 +1,34 @@
+[package]
+name = "mouseman"
+version = "0.1.0"
+edition = "2021"
+authors = ["you"]
+description = "Open-source mouse button remapper for macOS — no telemetry, no network, no data collection"
+license = "MIT"
+repository = "https://github.com/yourusername/mouseman"
+
+# Security: no_std not feasible for macOS APIs, but we keep deps minimal
+[dependencies]
+# CLI argument parsing — pure Rust
+clap        = { version = "4", features = ["derive"] }
+# Config parsing — pure Rust, no network
+serde       = { version = "1", features = ["derive"] }
+serde_yaml  = "0.9"
+# Logging — outputs to stderr only, never to disk or network
+log         = "0.4"
+env_logger  = "0.11"
+# Home dir for default config path
+dirs        = "5"
+# Error handling
+thiserror   = "1"
+# macOS CoreFoundation (run loop)
+core-foundation = "0.9"
+
+[profile.release]
+# Security: strip debug symbols from release binary
+strip = true
+# Optimize for size + speed
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"   # no unwinding machinery = smaller attack surface
