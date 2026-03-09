@@ -45,6 +45,7 @@ pub enum HidError {
     #[error("Failed to create IOHIDManager — grant Input Monitoring permission in System Settings")]
     ManagerCreationFailed,
     #[error("This platform is not supported (macOS only)")]
+    #[allow(dead_code)]
     UnsupportedPlatform,
 }
 
