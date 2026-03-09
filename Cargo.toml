@@ -2,10 +2,14 @@
 name = "mouseman"
 version = "0.1.0"
 edition = "2021"
-authors = ["you"]
+authors = ["Rakibul"]
 description = "Open-source mouse button remapper for macOS — no telemetry, no network, no data collection"
 license = "MIT"
-repository = "https://github.com/yourusername/mouseman"
+repository = "https://github.com/rakibulislam01/mouseman"
+
+[[bin]]
+name = "mouseman"
+path = "src/main.rs"
 
 # Security: no_std not feasible for macOS APIs, but we keep deps minimal
 [dependencies]
